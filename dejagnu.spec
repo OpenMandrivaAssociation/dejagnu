@@ -13,7 +13,8 @@ Source:		%{name}-%{version}.tar.bz2
 #Patch2:	dejagnu-1.4.2-mkargs.patch.bz2
 Group:		Development/Other
 Requires:	common-licenses, tcl >= 8.0, expect >= 5.21
-Prereq:		/sbin/install-info
+Requires(post):		install-info
+Requires(postun):		install-info
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-build
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd31-sgml
