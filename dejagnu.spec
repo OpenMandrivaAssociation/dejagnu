@@ -1,6 +1,6 @@
 %define name	dejagnu
 %define version 1.4.4
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary:	A front end for testing other programs
 Name:		%{name}
