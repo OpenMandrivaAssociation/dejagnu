@@ -1,25 +1,21 @@
-%define name	dejagnu
-%define version 1.4.4
-%define release %mkrel 3
-
-Summary:	A front end for testing other programs
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		dejagnu
+Version:	1.4.4
+Release:	%mkrel 4
 Epoch:		20010912
+Summary:	A front end for testing other programs
 License:	GPL
 URL:		http://www.gnu.org/software/dejagnu/
 Source:		%{name}-%{version}.tar.bz2 
 #Patch2:	dejagnu-1.4.2-mkargs.patch.bz2
 Group:		Development/Other
 Requires:	common-licenses, tcl >= 8.0, expect >= 5.21
-Requires(post):		install-info
-Requires(postun):		install-info
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-build
+Requires(post):	info-install
+Requires(postun):	info-install
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd31-sgml
 BuildRequires:	expect
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-build
 
 %description
 DejaGnu is an Expect/Tcl based framework for testing other programs.
@@ -79,5 +75,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/dejagnu.1*
 %{_mandir}/man1/runtest.1*
 %{_infodir}/dejagnu.info*
-
-
