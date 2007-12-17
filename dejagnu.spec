@@ -15,7 +15,6 @@ BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd31-sgml
 BuildRequires:	expect
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-build
 
 %description
 DejaGnu is an Expect/Tcl based framework for testing other programs.
