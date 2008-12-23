@@ -1,12 +1,14 @@
 Name:		dejagnu
 Version:	1.4.4
-Release:	%mkrel 7
+Release:	%mkrel 8
 Epoch:		20010912
 Summary:	A front end for testing other programs
 License:	GPL
 URL:		http://www.gnu.org/software/dejagnu/
-Source:		%{name}-%{version}.tar.bz2 
-#Patch2:	dejagnu-1.4.2-mkargs.patch.bz2
+Source0:	%{name}-%{version}.tar.bz2 
+Patch0:		dejagnu-1.4.4-smp-1.patch
+Patch1:		dejagnu-1.4.4-testsuite.patch
+Patch2:		dejagnu-1.4.4-runtest.patch
 Group:		Development/Other
 Requires:	common-licenses, tcl >= 8.0, expect >= 5.21
 Requires(post):	info-install
@@ -27,7 +29,9 @@ into software development).
 
 %prep
 %setup -q
-#%patch2 -p1
+%patch0 -p1 -b .smp~
+%patch1 -p1 -b .testsuite~
+%patch2 -p1 -b .runtest~
 
 %build
 %configure2_5x
