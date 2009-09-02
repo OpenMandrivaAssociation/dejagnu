@@ -1,6 +1,6 @@
 Name:		dejagnu
 Version:	1.4.4
-Release:	%mkrel 9
+Release:	%mkrel 10
 Epoch:		20010912
 Summary:	A front end for testing other programs
 License:	GPL
