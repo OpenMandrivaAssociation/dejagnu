@@ -16,6 +16,7 @@ Requires(postun):	info-install
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd31-sgml
 BuildRequires:	expect
+BuildRequires:	screen texinfo
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-build
 
@@ -36,11 +37,6 @@ into software development).
 %build
 %configure2_5x
 %make
-# all tests must pass (use runtest that was just built)
-(
-export PATH=$PWD:$PATH
-make check
-)
 
 (cd doc
   make overview.html
@@ -51,7 +47,8 @@ make check
   %make)
 
 %install
-%makeinstall
+rm -fr %buildroot
+%makeinstall_std
 
 cd contrib/bluegnu2.0.3/doc
 %makeinstall
@@ -59,6 +56,20 @@ cd contrib/bluegnu2.0.3/doc
 # Nuke unpackaged files
 rm -f $RPM_BUILD_ROOT%{_libdir}/config.guess
 rm -f $RPM_BUILD_ROOT%{_includedir}/dejagnu.h
+
+%check
+echo ============TESTING===============
+# Dejagnu test suite also has to test reporting to user.  It needs a
+# terminal for that.  That doesn't compute in mock.  Work around it by
+# running the test under screen and communicating back to test runner
+# via temporary file.  If you have better idea, we accept patches.
+TMP=`mktemp`
+screen -D -m sh -c '(make check RUNTESTFLAGS="RUNTEST=`pwd`/runtest"; echo $?) >> '$TMP
+RESULT=`tail -n 1 $TMP`
+cat $TMP
+rm -f $TMP
+echo ============END TESTING===========
+exit $RESULT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
