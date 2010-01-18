@@ -3,7 +3,7 @@ Version:	1.4.4
 Release:	%mkrel 10
 Epoch:		20010912
 Summary:	A front end for testing other programs
-License:	GPL
+License:	GPLv2+
 URL:		http://www.gnu.org/software/dejagnu/
 Source0:	%{name}-%{version}.tar.bz2 
 Patch0:		dejagnu-1.4.4-smp-1.patch
