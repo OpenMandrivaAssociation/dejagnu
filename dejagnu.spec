@@ -12,8 +12,8 @@ Group:		Development/Other
 Requires:	common-licenses tcl >= 8.0 expect >= 5.21
 Requires(post):	info-install
 Requires(postun):	info-install
-BuildRequires:	docbook-utils
-BuildRequires:	docbook-dtd31-sgml
+BuildRequires:	docbook-utils docbook-utils-pdf
+BuildRequires:	docbook-dtd31-sgml docbook2x
 BuildRequires:	expect
 BuildRequires:	screen texinfo
 BuildArch:	noarch
