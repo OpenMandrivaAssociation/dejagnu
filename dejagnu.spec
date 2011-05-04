@@ -5,7 +5,7 @@ Epoch:		20010912
 Summary:	A front end for testing other programs
 License:	GPLv2+
 URL:		http://www.gnu.org/software/dejagnu/
-Source0:	%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Patch0:		dejagnu-1.5-smp-1.patch
 Patch1:		dejagnu-1.5-runtest.patch
 Group:		Development/Other
