@@ -1,6 +1,6 @@
 Name:		dejagnu
 Version:	1.5
-Release:	1
+Release:	2
 Epoch:		20010912
 Summary:	A front end for testing other programs
 License:	GPLv2+
@@ -9,10 +9,11 @@ Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Patch0:		dejagnu-1.5-smp-1.patch
 Patch1:		dejagnu-1.5-runtest.patch
 Group:		Development/Other
-Requires:	common-licenses tcl >= 8.0 expect >= 5.21
-Requires(post):	info-install
-Requires(postun):	info-install
-BuildRequires:	docbook-utils docbook-utils-pdf
+Requires:	common-licenses
+Requires:	tcl >= 8.0
+Requires:	expect >= 5.21
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-utils-pdf
 BuildRequires:	docbook-dtd31-sgml
 # in contrib, but likely not needed anyways even if configure checks for it..
 #BuildRequires:	docbook2x
@@ -53,12 +54,6 @@ rm -f $TMP
 echo ============END TESTING===========
 exit $RESULT
 
-%post
-%_install_info %{name}.info
-
-%preun
-%_remove_install_info %{name}.info
-
 %files
 %doc AUTHORS NEWS README TODO ChangeLog doc/dejagnu.texi
 %dir %{_datadir}/dejagnu
@@ -67,3 +62,4 @@ exit $RESULT
 %{_mandir}/man1/runtest.1*
 %{_infodir}/dejagnu.info*
 %{_includedir}/dejagnu.h
+
