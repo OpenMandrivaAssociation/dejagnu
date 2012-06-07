@@ -46,7 +46,7 @@ echo ============TESTING===============
 # terminal for that.  That doesn't compute in mock.  Work around it by
 # running the test under screen and communicating back to test runner
 # via temporary file.  If you have better idea, we accept patches.
-TMP=`mktemp`
+TMP=%{name}-%{version}-testing
 screen -D -m sh -c '(make check RUNTESTFLAGS="RUNTEST=`pwd`/runtest"; echo $?) >> '$TMP
 RESULT=`tail -n 1 $TMP`
 cat $TMP
