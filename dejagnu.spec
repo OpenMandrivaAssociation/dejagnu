@@ -6,6 +6,7 @@ Summary:	A front end for testing other programs
 License:	GPLv2+
 URL:		http://www.gnu.org/software/dejagnu/
 Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
+Source1:	dejagnu.rpmlintrc
 Patch0:		dejagnu-1.5-smp-1.patch
 Patch1:		dejagnu-1.5-runtest.patch
 Group:		Development/Other
@@ -46,7 +47,9 @@ echo ============TESTING===============
 # terminal for that.  That doesn't compute in mock.  Work around it by
 # running the test under screen and communicating back to test runner
 # via temporary file.  If you have better idea, we accept patches.
-TMP=%{name}-%{version}-testing
+TMP=`mktemp`
+mkdir -p ~/tmp
+chmod 700 ~/tmp
 screen -D -m sh -c '(make check RUNTESTFLAGS="RUNTEST=`pwd`/runtest"; echo $?) >> '$TMP
 RESULT=`tail -n 1 $TMP`
 cat $TMP
