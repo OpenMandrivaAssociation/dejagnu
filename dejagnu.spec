@@ -1,23 +1,26 @@
+Summary:	A front end for testing other programs
 Name:		dejagnu
+Epoch:		20010912
 Version:	1.5
 Release:	2
-Epoch:		20010912
-Summary:	A front end for testing other programs
+Group:		Development/Other
 License:	GPLv2+
-URL:		http://www.gnu.org/software/dejagnu/
+Url:		http://www.gnu.org/software/dejagnu/
 Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 Patch0:		dejagnu-1.5-smp-1.patch
 Patch1:		dejagnu-1.5-runtest.patch
-Group:		Development/Other
-Requires:	common-licenses tcl >= 8.0 expect >= 5.21
-BuildRequires:	docbook-utils docbook-utils-pdf
-BuildRequires:	docbook-dtd31-sgml
-# in contrib, but likely not needed anyways even if configure checks for it..
-#BuildRequires:	docbook2x
-BuildRequires:	expect
-BuildRequires:	screen texinfo
 BuildArch:	noarch
+
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-utils-pdf
+BuildRequires:	docbook-dtd31-sgml
+BuildRequires:	expect
+BuildRequires:	screen
+BuildRequires:	texinfo
+Requires:	common-licenses
+Requires:	expect >= 5.21
+Requires:	tcl >= 8.0
 
 %description
 DejaGnu is an Expect/Tcl based framework for testing other programs.
@@ -29,8 +32,7 @@ into software development).
 
 %prep
 %setup -q
-%patch0 -p1 -b .smp~
-%patch1 -p1 -b .runtest~
+%apply_patches
 
 %build
 %configure2_5x -v
@@ -55,8 +57,8 @@ exit $RESULT
 %files
 %doc AUTHORS NEWS README TODO ChangeLog doc/dejagnu.texi
 %dir %{_datadir}/dejagnu
-%{_datadir}/dejagnu/*
 %{_bindir}/runtest
+%{_datadir}/dejagnu/*
 %{_mandir}/man1/runtest.1*
 %{_infodir}/dejagnu.info*
 %{_includedir}/dejagnu.h
