@@ -1,1 +1,2 @@
 addFilter("E: script-without-shebang.*")
+addFilter("E: devel-file-in-non-devel-package")

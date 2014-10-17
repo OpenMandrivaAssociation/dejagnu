@@ -2,7 +2,7 @@ Summary:	A front end for testing other programs
 Name:		dejagnu
 Epoch:		20010912
 Version:	1.5
-Release:	8
+Release:	9
 Group:		Development/Other
 License:	GPLv2+
 Url:		http://www.gnu.org/software/dejagnu/
@@ -35,7 +35,7 @@ into software development).
 %apply_patches
 
 %build
-%configure2_5x -v
+%configure
 
 %install
 %makeinstall_std
