@@ -1,14 +1,18 @@
+%define _disable_lto	1
+%define _disable_rebuild_configure 1
+
 Summary:	A front end for testing other programs
 Name:		dejagnu
 Epoch:		20010912
 Version:	1.5.3
-Release:	1
+Release:	2
 Group:		Development/Other
 License:	GPLv2+
 Url:		http://www.gnu.org/software/dejagnu/
 Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 Patch1:		dejagnu-1.5-runtest.patch
+Patch2:		dejagnu-1.5.3-wrong-kill.patch
 BuildArch:	noarch
 
 BuildRequires:	docbook-utils
