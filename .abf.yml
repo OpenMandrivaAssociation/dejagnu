@@ -1,4 +1,2 @@
-removed_sources:
-  dejagnu-1.5.tar.gz: bd84c71e0587af0278a9b6a404d6da1b92df66cd
 sources:
-  dejagnu-1.5.3.tar.gz: d81288e7d7bd38e74b7fee8e570ebfa8c21508d9
+  dejagnu-1.6.2.tar.gz: e8a28b8db857592f8f5d05a1c47bf2d2b823f1e9

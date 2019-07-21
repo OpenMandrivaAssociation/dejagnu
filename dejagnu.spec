@@ -4,15 +4,14 @@
 Summary:	A front end for testing other programs
 Name:		dejagnu
 Epoch:		20010912
-Version:	1.5.3
-Release:	3
+Version:	1.6.2
+Release:	1
 Group:		Development/Other
 License:	GPLv2+
 Url:		http://www.gnu.org/software/dejagnu/
 Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 Patch1:		dejagnu-1.5-runtest.patch
-Patch2:		dejagnu-1.5.3-wrong-kill.patch
 BuildArch:	noarch
 
 BuildRequires:	docbook-utils
