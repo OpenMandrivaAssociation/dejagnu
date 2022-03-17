@@ -3,8 +3,7 @@
 
 Summary:	A front end for testing other programs
 Name:		dejagnu
-Epoch:		20010912
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 Group:		Development/Other
 License:	GPLv2+
@@ -59,9 +58,12 @@ exit $RESULT
 %files
 %doc AUTHORS NEWS README TODO ChangeLog doc/dejagnu.texi
 %dir %{_datadir}/dejagnu
+%{_bindir}/dejagnu
 %{_bindir}/runtest
 %{_datadir}/dejagnu/*
 %{_mandir}/man1/runtest.1*
+%{_mandir}/man1/dejagnu.1*
+%{_mandir}/man1/dejagnu-help.1*
+%{_mandir}/man1/dejagnu-report-card.1*
 %{_infodir}/dejagnu.info*
 %{_includedir}/dejagnu.h
-

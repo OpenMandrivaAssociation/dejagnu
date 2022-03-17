@@ -1,8 +1,8 @@
-diff -up dejagnu-1.5/runtest.exp.orig dejagnu-1.5/runtest.exp
---- dejagnu-1.5/runtest.exp.orig	2011-03-04 13:09:59.000000000 +0100
-+++ dejagnu-1.5/runtest.exp	2011-03-22 14:43:06.090850456 +0100
-@@ -1443,8 +1443,7 @@ proc runtest { test_file_name } {
-     global tool
+diff -up dejagnu-1.6.3/runtest.exp.1~ dejagnu-1.6.3/runtest.exp
+--- dejagnu-1.6.3/runtest.exp.1~	2022-03-17 21:21:59.168758987 +0100
++++ dejagnu-1.6.3/runtest.exp	2022-03-17 21:22:43.248613620 +0100
+@@ -1601,8 +1601,7 @@ proc runtest { test_file_name } {
+     global testdir
  
      clone_output "Running $test_file_name ..."
 -    set prms_id	0
@@ -10,4 +10,4 @@ diff -up dejagnu-1.5/runtest.exp.orig dejagnu-1.5/runtest.exp
 +    reset_vars
      set test_result ""
  
-     if {[file exists $test_file_name]} {
+     # set testdir so testsuite file -test has a starting point
