@@ -4,7 +4,7 @@
 Summary:	A front end for testing other programs
 Name:		dejagnu
 Version:	1.6.3
-Release:	2
+Release:	1
 Group:		Development/Other
 License:	GPLv2+
 Url:		http://www.gnu.org/software/dejagnu/
