@@ -7,7 +7,7 @@ Version:	1.6.3
 Release:	3
 Group:		Development/Other
 License:	GPLv2+
-Url:		http://www.gnu.org/software/dejagnu/
+Url:		https://www.gnu.org/software/dejagnu/
 Source0:	ftp://ftp.gnu.org/gnu/dejagnu/%{name}-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 Patch1:		dejagnu-1.5-runtest.patch
